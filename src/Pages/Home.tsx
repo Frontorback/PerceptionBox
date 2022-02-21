@@ -36,7 +36,7 @@ const Home = () => {
             <input value={search} onChange={(e) => setSearch(e.target.value)} />
 
             {loading && <h1>Loading...</h1>}
-            <div style={{ display: "flex", flexDirection: "column" }}>
+            <div>
               {items &&
                 items.map((k) => (
                   <div key={k.id} className={styles.item}>
