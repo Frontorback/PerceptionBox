@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import Detail from './Pages/Detail';
+import Home from './Pages/Home';
+import Liked from './Pages/Liked';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <BrowserRouter>
+          <div>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/Liked">Liked characters</NavLink>
+          </div>
+          <Routes>
+              <Route path='/' element={<Home />}/>
+              <Route path='/Detail' element={<Detail />}/>
+              <Route path='/Liked' element={<Liked />}/>
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }
